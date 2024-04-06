@@ -1,5 +1,9 @@
-from django.db import models
+from django.urls import path,include
+from .views import *
+from django.conf.urls.static import static
+from django.conf import settings
 
+urlpatterns = [
+    path("file",FileUploadAPIView.as_view())
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-class FileUpload(models.Model):
-    file = models.FileField(upload_to="core/file/")
