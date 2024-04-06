@@ -47,13 +47,13 @@ const FileUpload = () => {
   return (
   
       <Box
-        backgroundColor="rgba(255, 255, 255, 0.8)"
+        backgroundColor="rgba(240, 248, 255, 0.205)"
         padding={8}
-        borderRadius="md"
+        borderRadius="60px"
         boxShadow="lg"
         textAlign="center"
       >
-        <Input type="file" onChange={handleFileChange} mb={4} />
+        <Input type="file" style={{height:"30px"}} onChange={handleFileChange} mb={4} />
         {error && <Text color="red.500">{error}</Text>}
         {successMessage && <Text color="green.500">{successMessage}</Text>}
         <Button
@@ -61,6 +61,7 @@ const FileUpload = () => {
           colorScheme="teal"
           isLoading={loading}
           mt={4}
+          paddingTop={"3px"}
         >
           Upload File
         </Button>
